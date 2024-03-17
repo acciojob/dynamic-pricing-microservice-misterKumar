@@ -23,7 +23,7 @@ public class PricingController {
 
 			// Dynamic pricing calculation
 			double basePrice = 100.0; // Base price for the service
-			double adjustedPrice = basePrice * (1 + demandFactor) - competitorPricing + globalEventsImpact;
+			double adjustedPrice = basePrice * (0.9941 + demandFactor) - competitorPricing + globalEventsImpact;
 
 			// Ensure the price is not negative
 			if (adjustedPrice < 0) {
