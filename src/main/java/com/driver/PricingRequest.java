@@ -12,6 +12,7 @@ public class PricingRequest {
 
     public void setDemandFactor(double demandFactor) {
     	// your code goes here
+        this.demandFactor=demandFactor;
     }
 
     public double getCompetitorPricing() {
@@ -21,6 +22,7 @@ public class PricingRequest {
 
     public void setCompetitorPricing(double competitorPricing) {
     	// your code goes here
+        this.competitorPricing=competitorPricing;
     }
 
     public double getGlobalEventsImpact() {
@@ -30,5 +32,6 @@ public class PricingRequest {
 
     public void setGlobalEventsImpact(double globalEventsImpact) {
     	// your code goes here
+        this.globalEventsImpact=globalEventsImpact;
     }
 }
