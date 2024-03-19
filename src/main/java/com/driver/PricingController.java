@@ -17,19 +17,10 @@ public class PricingController {
 	    private double calculatePrice(PricingRequest request) {
 	    	// your code goes here
 			// Extract input factors
-			double demandFactor = request.getDemandFactor();
-			double competitorPricing = request.getCompetitorPricing();
-			double globalEventsImpact = request.getGlobalEventsImpact();
-
-			// Dynamic pricing calculation
-			double basePrice = 100.0; // Base price for the service
-			double adjustedPrice = basePrice * (0.9941 + demandFactor) - competitorPricing + globalEventsImpact;
-
-			// Ensure the price is not negative
-			if (adjustedPrice < 0) {
-				adjustedPrice = 0;
-			}
-
-			return adjustedPrice;
+			double basePrice = 100.0;
+			double demandFactor = 1.0 + request.getDemandFactor();
+			double competitorFactor = 1.0 - request.getCompetitorPricing() / 100.0;
+			double globalEventsFactor = 1.0 + request.getGlobalEventsImpact() / 100.0;
+			return basePrice*demandFactor*competitorFactor*globalEventsFactor;
 	    }
 }
